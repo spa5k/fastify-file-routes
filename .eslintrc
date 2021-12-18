@@ -1,0 +1,8 @@
+{
+  "extends": ["galex"],
+  "env": { "node": true },
+  "rules": {
+    "no-console": "off"
+  },
+  "root": true
+}
