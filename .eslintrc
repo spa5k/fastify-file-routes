@@ -2,7 +2,10 @@
   "extends": ["galex"],
   "env": { "node": true },
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "import/dynamic-import-chunkname": "off",
+    "import/order": "off",
+    "import/no-default-export": "off"
   },
   "root": true
 }

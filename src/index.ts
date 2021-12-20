@@ -1,1 +1,2 @@
-console.log("x");
+export { fileRoutes } from "./modules";
+export * from "./modules/types";
