@@ -5,7 +5,7 @@ const main = async () => {
   const app = fastify({ logger: true });
 
   await app.register(fileRoutes, {
-    dir: "./routes",
+    routesDir: "./routes",
   });
 
   app.printRoutes();

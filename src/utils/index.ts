@@ -1,5 +1,4 @@
 export * from "./autoload";
-export * from "./cleanUrlString";
 export * from "./handleParameters";
 export * from "./isAcceptableFile";
 export * from "./loadModule";

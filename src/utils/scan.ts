@@ -1,25 +1,25 @@
 import type { FastifyInstance } from "fastify";
 import fs from "fs";
 import path from "path";
+import { isAcceptableFile } from ".";
 import { autoload } from "./autoload";
 import { transformPathToUrl } from "./transformPathToUrl";
 
-export function scanFolders(
+export async function scanFolders(
   fastify: FastifyInstance,
   baseDir: string,
-  current: string,
-  log = false
-): void {
-  const combined = path.join(baseDir, current);
-  const combinedStat = fs.statSync(combined);
+  current: string
+): Promise<void> {
+  const combined: string = path.join(baseDir, current);
+  const combinedStat: fs.Stats = fs.statSync(combined);
 
   if (combinedStat.isDirectory()) {
     if (!path.basename(current).startsWith("_")) {
       for (const entry of fs.readdirSync(combined)) {
-        scanFolders(fastify, baseDir, path.join(current, entry), log);
+        await scanFolders(fastify, baseDir, path.join(current, entry));
       }
     }
-  } else {
-    autoload(fastify, combined, transformPathToUrl(current));
+  } else if (isAcceptableFile(combined, combinedStat)) {
+    await autoload(fastify, combined, transformPathToUrl(current));
   }
 }

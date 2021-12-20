@@ -4,7 +4,8 @@ import type {
   ObjectJsonSchemaProperty,
 } from "type-jsonschema";
 
-export const errorLabel = "[ERROR] fastify-file-system-routes:";
+export const errorLabel: "[ERROR] fastify-file-system-routes:" =
+  "[ERROR] fastify-file-system-routes:";
 
 export type ValidMethods =
   | "DELETE"
@@ -15,7 +16,7 @@ export type ValidMethods =
   | "PUT"
   | "OPTIONS";
 
-export const validMethods = new Set([
+export const validMethods: Set<string> = new Set([
   "delete",
   "get",
   "head",
@@ -35,6 +36,7 @@ export type PostRoute = AnyRoute;
 export type PutRoute = AnyRoute;
 export type OptionsRoute = AnyRoute;
 
+// eslint-disable-next-line
 export type Security = {
   [key: string]: string[];
 };
@@ -63,7 +65,7 @@ export type StrictPostRoute = StrictAnyRoute;
 export type StrictPutRoute = StrictAnyRoute;
 export type StrictOptionsRoute = StrictAnyRoute;
 
-export type Resource = {
+export type Route = {
   delete?: DeleteRoute;
   get?: GetRoute;
   head?: HeadRoute;
@@ -73,7 +75,7 @@ export type Resource = {
   options?: OptionsRoute;
 };
 
-export type StrictResource = {
+export type StrictRoute = {
   delete?: StrictDeleteRoute;
   get?: StrictGetRoute;
   head?: StrictHeadRoute;
@@ -83,11 +85,7 @@ export type StrictResource = {
   options?: StrictOptionsRoute;
 };
 
-export type FastifyFileSystemRoutesOptions = {
-  dir: string;
+export type FileSystemRoutesOptions = {
+  routesDir: string;
   prefix?: string;
-};
-
-export type FileModule = {
-  default: () => Resource;
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { FastifyInstance } from "fastify";
@@ -6,23 +7,23 @@ import path from "path";
 import pc from "picocolors";
 import process from "process";
 import { scanFolders } from "../utils";
-import type { FastifyFileSystemRoutesOptions } from "./types";
+import type { FileSystemRoutesOptions } from "./types";
 import { errorLabel } from "./types";
 
-export const fastifyFileRoutesPlugin = (
+export const fastifyFileRoutesPlugin = async (
   fastify: FastifyInstance,
-  options: FastifyFileSystemRoutesOptions,
+  options: FileSystemRoutesOptions,
   next: any
-): any => {
-  if (!options.dir) {
-    const message = `${errorLabel} dir must be specified`;
+): Promise<any> => {
+  if (!options.routesDir) {
+    const message: string = `${errorLabel} dir must be specified`;
     console.error(`${pc.red(message)}`);
 
     return next(new Error(message));
   }
 
-  if (typeof options.dir !== "string") {
-    const message = `${errorLabel} dir must be the path of file system routes directory`;
+  if (typeof options.routesDir !== "string") {
+    const message: string = `${errorLabel} dir must be the path of file system routes directory`;
     console.error(`${pc.red(message)}`);
 
     return next(new Error(message));
@@ -30,30 +31,35 @@ export const fastifyFileRoutesPlugin = (
 
   let dirPath: string;
 
-  if (path.isAbsolute(options.dir)) {
-    dirPath = options.dir;
+  if (path.isAbsolute(options.routesDir)) {
+    dirPath = options.routesDir;
   } else if (path.isAbsolute(process.argv[1])) {
-    dirPath = path.join(process.argv[1], "..", options.dir);
+    dirPath = path.join(process.argv[1], "..", options.routesDir);
   } else {
-    dirPath = path.join(process.cwd(), process.argv[1], "..", options.dir);
+    dirPath = path.join(
+      process.cwd(),
+      process.argv[1],
+      "..",
+      options.routesDir
+    );
   }
 
   if (!fs.existsSync(dirPath)) {
-    const message = `${errorLabel} dir ${dirPath} does not exists`;
+    const message: string = `${errorLabel} dir ${dirPath} does not exists`;
     console.error(`${pc.red(message)}`);
 
     return next(new Error(message));
   }
 
   if (!fs.statSync(dirPath).isDirectory()) {
-    const message = `${errorLabel} dir ${dirPath} must be a directory`;
+    const message: string = `${errorLabel} dir ${dirPath} must be a directory`;
     console.error(`${pc.red(message)}`);
 
     return next(new Error(message));
   }
 
   try {
-    scanFolders(fastify, dirPath, "");
+    await scanFolders(fastify, dirPath, "");
   } catch (error: any) {
     console.error(`${pc.red(error.message)}`);
     return next(error);

@@ -1,15 +1,16 @@
+/* eslint-disable no-console */
 import type { FastifyInstance, RouteOptions } from "fastify";
 import pc from "picocolors";
-import { loadModule } from ".";
+import { loadModule, ModuleType } from ".";
 import type { ValidMethods } from "../modules/types";
 import { validMethods } from "../modules/types";
 
-export function autoload(
+export async function autoload(
   fastify: FastifyInstance,
   fullPath: string,
   url: string
-): void {
-  const module = loadModule(fullPath);
+): Promise<void> {
+  const module: ModuleType = await loadModule(fullPath);
 
   for (const [method, route] of Object.entries<RouteOptions>(module)) {
     if (validMethods.has(method)) {

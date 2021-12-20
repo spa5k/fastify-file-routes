@@ -4,13 +4,13 @@ import { handleParameters } from "./handleParameters";
 // This function will transform the path of a route to a url
 
 export const transformPathToUrl = (filePath: string): string => {
-  const url = `/${filePath}`;
+  const url: string = `/${filePath}`;
 
   if (url.length === 1) {
     return url;
   }
 
-  let resultUrl = url
+  let resultUrl: string = url
     .split(path.sep)
     .map((part) => handleParameters(part))
     .join("/");

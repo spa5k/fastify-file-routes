@@ -1,6 +1,6 @@
-import type { Resource } from "../../../../../src";
+import type { Route } from "../../../../../src";
 
-export const routes: Resource = {
+export const routes: Route = {
   get: {
     handler: async (request, reply) => {
       const { params } = request;
