@@ -7,17 +7,16 @@ on:
       - main
 
 jobs:
-  runner-job:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [14.x]
-
-    name: Node.js ${{ matrix.node }}
-
+        node-version: [14]
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.24.2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -25,8 +24,6 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Build
-        run: pnpm build
       - name: Test
         run: pnpm ci:test
       - name: Release
