@@ -17,20 +17,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - uses: pnpm/action-setup@v2.0.1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "yarn"
-      - name: Install yarn latest
-        run: yarn set version berry && yarn set version latest
-      - name: Install deps
-        run: yarn
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
       - name: Build
-        run: yarn build
+        run: pnpm build
+      - name: Test
+        run: pnpm ci:test
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn run semantic-release
+        run: pnpm semantic-release

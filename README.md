@@ -1,4 +1,5 @@
 # Fastify File Routes
+
 <div align="center">
 
 [![NPM version](https://img.shields.io/npm/v/fastify-file-routes.svg?style=for-the-badge)](https://www.npmjs.com/package/fastify-file-routes)
@@ -9,7 +10,6 @@
 ![npm](https://img.shields.io/npm/dw/fastify-file-routes?style=for-the-badge)
 
 </div>
-
 
 A Fastify plugin that provides a file system routes, based on the way Next.JS file system routing works, including all possible features.
 
@@ -31,20 +31,19 @@ npm install fastify-file-system-routes
 yarn add fastify-file-system-routes
 ```
 
-
-
 ## :blue_book: Usage/Examples
 
 ### 1. Register the Plugin.
+
 ```typescript
 import { fileRoutes } from "fastify-file-routes";
 
 const app: FastifyInstance = fastify({ logger: true });
 
-  await app.register(fileRoutes, {
-    routesDir: "./routes",
-    prefix // -> optional
-  });
+await app.register(fileRoutes, {
+  routesDir: "./routes",
+  prefix, // -> optional
+});
 
 await app.listen(3000);
 ```
@@ -74,7 +73,6 @@ export const routes: Route = {
 };
 ```
 
-
 ### 4. Access the Parameters.
 
 ```typescript
@@ -85,11 +83,12 @@ export const routes: Route = {
   get: {
     handler: async (request, reply) => {
       const { params } = request;
-      await reply.send(`photos of user ${params.userId}`)
+      await reply.send(`photos of user ${params.userId}`);
     },
   },
 };
 ```
+
 ## :arrow_forward: Route module definition
 
 Method specification for attributes is available here: [Method specification](https://www.fastify.io/docs/latest/Routes/#full-declaration)
@@ -105,7 +104,6 @@ Allowed attributes mapped to Http methods in module:
 - post
 - put
 - options
-
 
 ## :arrow_forward: Skipping files
 
@@ -124,15 +122,18 @@ routes
 ├── ignored-js-test.test.js
 └── ignored-ts-test.test.ts
 ```
+
 > :warning: also any `*.test.js` and `*.test.ts` are skipped!
 
 this is useful if you want to have a lib file which contains functions that don't have to be a route, so just create the file with `_` prepending character
 
+### Visualization of this Repo.
+
+![Visualization of this repo](./diagram.svg)
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
 
 ## Related
 

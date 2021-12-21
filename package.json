@@ -97,7 +97,7 @@
     "start": "pnpm dev-ts",
     "test:suite": "vitest",
     "test": "vitest",
-    "ci": "start-server-and-test 'pnpm start' http://localhost:3000 'pnpm test'",
+    "ci:test": "start-server-and-test 'pnpm start' http://localhost:3000 'pnpm test'",
     "coverage": "c8 vitest"
   },
   "typings": "dist/index.d.ts"
