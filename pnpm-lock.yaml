@@ -28,7 +28,6 @@ specifiers:
   eslint-plugin-sonarjs: 0.11.0
   eslint-plugin-unicorn: 39.0.0
   fastify: ^3.25.0
-  fastify-autoroutes: ^1.5.0
   fastify-plugin: ^3.0.0
   husky: 7.0.4
   node-dev: 7.1.0
@@ -47,7 +46,6 @@ specifiers:
   vitest: ^0.0.100
 
 dependencies:
-  fastify-autoroutes: 1.5.0
   picocolors: 1.0.0
   type-jsonschema: 0.0.9
 
@@ -3024,19 +3022,13 @@ packages:
     resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
     dev: true
 
-  /fastify-autoroutes/1.5.0:
-    resolution: {integrity: sha512-GB8l6xm2TTSJdZb8+NvUsMznJS/mYVJX/Ty9zdYm0A5apqpc+9qbmfG6pfIkYSFOTfhdcEZVT9CvGIvUH3p36g==}
-    dependencies:
-      fastify-plugin: 3.0.0
-      type-jsonschema: 0.0.9
-    dev: false
-
   /fastify-error/0.3.1:
     resolution: {integrity: sha512-oCfpcsDndgnDVgiI7bwFKAun2dO+4h84vBlkWsWnz/OUK9Reff5UFoFl241xTiLeHWX/vU9zkDVXqYUxjOwHcQ==}
     dev: true
 
   /fastify-plugin/3.0.0:
     resolution: {integrity: sha512-ZdCvKEEd92DNLps5n0v231Bha8bkz1DjnPP/aEz37rz/q42Z5JVLmgnqR4DYuNn3NXAO3IDCPyRvgvxtJ4Ym4w==}
+    dev: true
 
   /fastify-warning/0.2.0:
     resolution: {integrity: sha512-s1EQguBw/9qtc1p/WTY4eq9WMRIACkj+HTcOIK1in4MV5aFaQC9ZCIt0dJ7pr5bIf4lPpHvAtP2ywpTNgs7hqw==}
