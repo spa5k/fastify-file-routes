@@ -11,7 +11,7 @@ module.exports = {
       },
     ],
   },
-  testPathIgnorePatterns: ["/node_modules/", "/dist/", "/types/"],
+  testPathIgnorePatterns: ["/node_modules/", "/dist/", "/types/", "/ignored/"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   testEnvironment: "node",
 };

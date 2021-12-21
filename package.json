@@ -1,10 +1,10 @@
 {
-  "name": "esbuild-typescript-library-template",
-  "description": "Typescript Esbuild Library Template",
-  "version": "1.7.0",
+  "name": "fastify-file-routes",
+  "description": "A Fastify plugin that provides a file system routes, based on the way Next.JS file system routing works, including all possible features.",
+  "version": "0.0.0",
   "author": "spa5k <unbuttun@gmail.com>",
   "bugs": {
-    "url": "https://github.com/spa5k/esbuild-typescript-library-template/issues"
+    "url": "https://github.com/spa5k/fastify-file-routes/issues"
   },
   "commitlint": {
     "extends": [
@@ -12,48 +12,56 @@
     ]
   },
   "dependencies": {
-    "@yarnpkg/esbuild-plugin-pnp": "^2.0.0"
+    "picocolors": "^1.0.0",
+    "type-jsonschema": "^0.0.9"
   },
   "devDependencies": {
-    "@commitlint/cli": "14.1.0",
-    "@commitlint/config-conventional": "14.1.0",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
     "@semantic-release/changelog": "6.0.1",
-    "@semantic-release/commit-analyzer": "9.0.1",
+    "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.2",
     "@semantic-release/npm": "8.0.3",
-    "@semantic-release/release-notes-generator": "10.0.2",
-    "@types/jest": "27.0.2",
-    "@types/node": "16.11.7",
-    "@typescript-eslint/eslint-plugin": "5.3.1",
-    "@typescript-eslint/parser": "5.3.1",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "@spa5k/eslint-config": "^0.0.1",
+    "@types/jest": "27.0.3",
+    "@types/node": "17.0.1",
+    "@typescript-eslint/eslint-plugin": "5.7.0",
+    "@typescript-eslint/parser": "5.7.0",
+    "c8": "^7.10.0",
     "commitizen": "4.2.4",
     "dotenv": "10.0.0",
-    "esbuild": "0.13.13",
-    "esbuild-jest": "0.5.0",
-    "eslint": "8.2.0",
-    "eslint-config-galex": "3.3.3",
+    "esbuild": "0.14.6",
+    "eslint": "8.5.0",
+    "eslint-config-galex": "3.4.1",
     "eslint-import-resolver-node": "0.3.6",
     "eslint-plugin-import": "2.25.3",
-    "eslint-plugin-inclusive-language": "2.1.1",
-    "eslint-plugin-jest-formatting": "3.0.0",
-    "eslint-plugin-promise": "5.1.1",
-    "eslint-plugin-sonarjs": "0.10.0",
-    "eslint-plugin-unicorn": "38.0.1",
+    "eslint-plugin-inclusive-language": "2.2.0",
+    "eslint-plugin-jest-formatting": "3.1.0",
+    "eslint-plugin-promise": "6.0.0",
+    "eslint-plugin-sonarjs": "0.11.0",
+    "eslint-plugin-unicorn": "39.0.0",
+    "fastify": "^3.25.0",
+    "fastify-plugin": "^3.0.0",
     "husky": "7.0.4",
-    "jest": "27.3.1",
     "node-dev": "7.1.0",
-    "pinst": "2.1.6",
-    "prettier": "2.4.1",
-    "semantic-release": "18.0.0",
+    "node-fetch": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.5.1",
+    "semantic-release": "18.0.1",
+    "start-server-and-test": "^1.14.0",
+    "ts-node": "^10.4.0",
     "tslib": "2.3.1",
-    "tsup": "5.7.0",
-    "typescript": "4.4.4"
+    "tsup": "5.11.6",
+    "typescript": "4.5.4",
+    "vite": "^2.7.4",
+    "vitest": "^0.0.100"
   },
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/spa5k/esbuild-typescript-library-template#readme",
+  "homepage": "https://github.com/spa5k/fastify-file-routes#readme",
   "husky": {
     "hooks": {
       "pre-commit": "pnpm format && pnpm lint",
@@ -61,33 +69,36 @@
     }
   },
   "keywords": [
-    "cjs",
-    "dts",
-    "esbuild",
+    "fastify",
+    "fastify-plugin",
+    "nextjs",
+    "next",
+    "file-routes",
+    "routes",
+    "typescript",
     "esm",
-    "library",
-    "template",
-    "typescript"
+    "cjs"
   ],
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "packageManager": "yarn@3.1.0",
+  "module": "dist/index.mjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spa5k/esbuild-typescript-library-template.git"
+    "url": "git+https://github.com/spa5k/fastify-file-routes.git"
   },
   "scripts": {
-    "build": "NODE_ENV='production' tsup-node",
-    "build:dev": "NODE_ENV='development' tsup-node",
-    "dev": "node-dev dist/main.js",
+    "build": "tsup-node",
+    "build:dev": "tsup-node",
+    "dev-ts": "node-dev example/typescript/index.ts --notify=false",
     "format": "prettier --write .",
     "lint": "eslint src --ext .ts",
     "semantic-release": "semantic-release",
-    "test": "jest",
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "pretest": "pnpm dev-ts",
+    "start": "pnpm dev-ts",
+    "test:suite": "vitest",
+    "test": "vitest",
+    "ci:test": "start-server-and-test 'pnpm start' http://localhost:3000 'pnpm test'",
+    "coverage": "c8 vitest"
   },
   "typings": "dist/index.d.ts"
 }
