@@ -5,6 +5,7 @@ export const handleParameters = (token: string): string => {
   const jsRegex: RegExp = /\.js$/u;
   const wildCardRouteRegex: RegExp = /\[\.\.\..+\]/gu;
 
+  // This will clean the url extensions like .ts or .js
   const tokenToBeReplaced: string = token
     .replace(tsRegex, "")
     .replace(jsRegex, "");
