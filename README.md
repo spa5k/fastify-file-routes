@@ -187,6 +187,7 @@ this is useful if you want to have a lib file which contains functions that don'
 
 1. Adding support for optional wildcard routes - [[...id]].
 2. More tests.
+3. Better typescript stuff for validation and inferences in routes.
 
 ## Visualization of this Repo.
 
