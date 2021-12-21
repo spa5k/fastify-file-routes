@@ -57,7 +57,7 @@ mkdir routes
 
 ```typescript
 //file: `routes/some/route.ts`
-//url:  `http://your-host/some/route`
+//url:  `http://localhost/some/route`
 
 import type { Route } from "fastify-file-routes";
 
@@ -76,7 +76,7 @@ export const routes: Route = {
 
 ```typescript
 //file: `routes/users/[userId]/settings.js`
-//mapped to: `<your host>/users/:userId/settings`
+//mapped to: `http://localhost/users/:userId/settings`
 
 export const routes: Route = {
   get: {
@@ -92,7 +92,7 @@ export const routes: Route = {
 
 ```typescript
 //file: `routes/profile/[...id].ts  `
-//mapped to: `<your host>/profile/*`
+//mapped to: `http://localhost/profile/*`
 
 export const routes: Route = {
   get: {
@@ -122,7 +122,7 @@ export const routes: Route = {
 
 ```typescript
 //file: `routes/some/route.ts`
-//url:  `http://your-host/api/some/route`
+//url:  `http://localhost/api/some/route`
 
 await app.register(fileRoutes, {
   routesDir: "./routes",
