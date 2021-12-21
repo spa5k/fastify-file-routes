@@ -13,8 +13,7 @@
   },
   "dependencies": {
     "fastify-plugin": "^3.0.0",
-    "picocolors": "^1.0.0",
-    "type-jsonschema": "^0.0.9"
+    "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "15.0.0",

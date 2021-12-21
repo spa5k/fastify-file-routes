@@ -40,7 +40,6 @@ specifiers:
   ts-node: ^10.4.0
   tslib: 2.3.1
   tsup: 5.11.7
-  type-jsonschema: ^0.0.9
   typescript: 4.5.4
   vite: ^2.7.4
   vitest: ^0.0.100
@@ -48,7 +47,6 @@ specifiers:
 dependencies:
   fastify-plugin: 3.0.0
   picocolors: 1.0.0
-  type-jsonschema: 0.0.9
 
 devDependencies:
   '@commitlint/cli': 15.0.0
@@ -6023,10 +6021,6 @@ packages:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
     dev: true
-
-  /type-jsonschema/0.0.9:
-    resolution: {integrity: sha512-vMDnI/dwFH2txa09e2g+rYWXp1oYWZeZFwYuAVEfIgtsremi21pDx5lgPMUHvTRN8b7VH8Wx2MBIqi+dX2Jp8g==}
-    dev: false
 
   /typescript/4.5.4:
     resolution: {integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==}
