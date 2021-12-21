@@ -23,11 +23,11 @@ A Fastify plugin that provides a file system routes, based on the way Next.JS fi
 ## :rocket: Installation
 
 ```sh
-npm install fastify-file-system-routes
+npm install fastify-file-routes
 ```
 
 ```yarn
-yarn add fastify-file-system-routes
+yarn add fastify-file-routes
 ```
 
 ## :blue_book: Usage/Examples
