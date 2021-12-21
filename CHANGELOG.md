@@ -1,10 +1,9 @@
 ## [1.0.3](https://github.com/spa5k/fastify-file-routes/compare/v1.0.2...v1.0.3) (2021-12-21)
 
-
 ### Bug Fixes
 
-* **autoload:** 🐛 adding a try catch to make sure that wrong route does not result in a crash ([0e42d3f](https://github.com/spa5k/fastify-file-routes/commit/0e42d3f3f61a5d9d5e44be2a7b1a88a578ee1973))
-* **test:** 🐛 removing empty route to let test run successfully ([2db5f71](https://github.com/spa5k/fastify-file-routes/commit/2db5f71a420f77fa405cfd6f5540357b92c68a4b))
+- **autoload:** 🐛 adding a try catch to make sure that wrong route does not result in a crash ([0e42d3f](https://github.com/spa5k/fastify-file-routes/commit/0e42d3f3f61a5d9d5e44be2a7b1a88a578ee1973))
+- **test:** 🐛 removing empty route to let test run successfully ([2db5f71](https://github.com/spa5k/fastify-file-routes/commit/2db5f71a420f77fa405cfd6f5540357b92c68a4b))
 
 ## [1.0.2](https://github.com/spa5k/fastify-file-routes/compare/v1.0.1...v1.0.2) (2021-12-21)
 

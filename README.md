@@ -19,6 +19,7 @@ A Fastify plugin that provides a file system routes, based on the way Next.JS fi
     3. Nested Routes.
     4. Dynamic Route Segments.
     5. Catch All (Wildcard \*) Routes.
+    6. Multiple parameters. eg /users/:id-:name
 
 ## :rocket: Installation
 
@@ -134,6 +135,27 @@ export const routes: Route = {
     handler: async (_request, reply) => {
       await reply.send({
         post: "post user",
+      });
+    },
+  },
+};
+```
+
+### 8. Multiple Parameters
+
+```typescript
+//file: `routes/some/[param1]-[param2].ts`
+//url:  `http://localhost/some/:param1-:param2`
+
+await app.register(fileRoutes, {
+  routesDir: "./routes",
+});
+
+export const routes: Route = {
+  post: {
+    handler: async (_request, reply) => {
+      await reply.send({
+        post: "multiple params",
       });
     },
   },

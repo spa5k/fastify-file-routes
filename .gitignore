@@ -128,3 +128,4 @@ dist
 .pnp.*
 
 coverage
+.dc-cache

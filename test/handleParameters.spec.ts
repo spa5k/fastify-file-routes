@@ -27,4 +27,16 @@ describe("handleParameters", () => {
       "/profile/:id/spark"
     );
   });
+
+  it(`7 - profile/:id-:spark`, () => {
+    expect(handleParameters("/profile/[id]-[spark].ts")).toBe(
+      "/profile/:id-:spark"
+    );
+  });
+
+  it(`8 - profile/:id-:spark/:nice`, () => {
+    expect(handleParameters("/profile/[id]-[spark]/[nice].ts")).toBe(
+      "/profile/:id-:spark/:nice"
+    );
+  });
 });
