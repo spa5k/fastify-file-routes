@@ -1,7 +1,7 @@
 {
   "name": "fastify-file-routes",
   "description": "A Fastify plugin that provides a file system routes, based on the way Next.JS file system routing works, including all possible features.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "spa5k <unbuttun@gmail.com>",
   "bugs": {
     "url": "https://github.com/spa5k/fastify-file-routes/issues"
