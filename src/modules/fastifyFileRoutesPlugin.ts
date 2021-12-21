@@ -7,12 +7,12 @@ import path from "path";
 import pc from "picocolors";
 import process from "process";
 import { scanFolders } from "../utils";
-import type { FileSystemRoutesOptions } from "./types";
+import type { FileRoutesOptions } from "./types";
 import { errorLabel } from "./types";
 
 export const fastifyFileRoutesPlugin = async (
   fastify: FastifyInstance,
-  options: FileSystemRoutesOptions,
+  options: FileRoutesOptions,
   next: any
 ): Promise<any> => {
   if (!options.routesDir) {
@@ -59,7 +59,12 @@ export const fastifyFileRoutesPlugin = async (
   }
 
   try {
-    await scanFolders(fastify, dirPath, "");
+    await scanFolders(
+      fastify,
+      dirPath,
+      "",
+      options.prefix ? options.prefix : ""
+    );
   } catch (error: any) {
     console.error(`${pc.red(error.message)}`);
     return next(error);

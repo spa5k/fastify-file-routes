@@ -1,10 +1,10 @@
 {
-  "name": "fastify-file-system-routes",
+  "name": "fastify-file-routes",
   "description": "A Fastify plugin that provides a file system routes, based on the way Next.JS file system routing works, including all possible features.",
   "version": "0.0.0",
   "author": "spa5k <unbuttun@gmail.com>",
   "bugs": {
-    "url": "https://github.com/spa5k/fastify-file-system-routes/issues"
+    "url": "https://github.com/spa5k/fastify-file-routes/issues"
   },
   "commitlint": {
     "extends": [
@@ -32,7 +32,6 @@
     "@typescript-eslint/parser": "5.7.0",
     "c8": "^7.10.0",
     "commitizen": "4.2.4",
-    "coveralls": "^3.1.1",
     "dotenv": "10.0.0",
     "esbuild": "0.14.6",
     "eslint": "8.5.0",
@@ -48,8 +47,11 @@
     "fastify-plugin": "^3.0.0",
     "husky": "7.0.4",
     "node-dev": "7.1.0",
+    "node-fetch": "^3.1.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "2.5.1",
     "semantic-release": "18.0.1",
+    "start-server-and-test": "^1.14.0",
     "ts-node": "^10.4.0",
     "tslib": "2.3.1",
     "tsup": "5.11.6",
@@ -60,7 +62,7 @@
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/spa5k/fastify-file-system-routes#readme",
+  "homepage": "https://github.com/spa5k/fastify-file-routes#readme",
   "husky": {
     "hooks": {
       "pre-commit": "pnpm format && pnpm lint",
@@ -83,7 +85,7 @@
   "module": "dist/index.mjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spa5k/fastify-file-system-routes.git"
+    "url": "git+https://github.com/spa5k/fastify-file-routes.git"
   },
   "scripts": {
     "build": "tsup-node",
@@ -92,7 +94,11 @@
     "format": "prettier --write .",
     "lint": "eslint src --ext .ts",
     "semantic-release": "semantic-release",
+    "pretest": "pnpm dev-ts",
+    "start": "pnpm dev-ts",
+    "test:suite": "vitest",
     "test": "vitest",
+    "ci": "start-server-and-test 'pnpm start' http://localhost:3000 'pnpm test'",
     "coverage": "c8 vitest"
   },
   "typings": "dist/index.d.ts"

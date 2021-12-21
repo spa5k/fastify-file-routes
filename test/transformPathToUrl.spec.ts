@@ -33,4 +33,10 @@ describe("cleanUrlString", () => {
   it(`7 - index.js`, () => {
     expect(transformPathToUrl("/index.js")).toBe("/");
   });
+
+  it(`8 - /profile/[game]/index.ts`, () => {
+    expect(transformPathToUrl("/profile/[game]/index.ts")).toBe(
+      "/profile/:game"
+    );
+  });
 });

@@ -10,6 +10,11 @@ A Fastify plugin that provides a file system routes, based on the way Next.JS fi
 4. Dynamic Route Segments.
 5. Catch All (Wildcard \*) Routes.
 
+
+## Installation - 
+
+
+
 ## References -
 
 [Fastify - AutoRoutes](https://github.com/GiovanniCardamone/fastify-autoroutes)

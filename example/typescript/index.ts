@@ -1,8 +1,8 @@
-import fastify from "fastify";
+import fastify, { FastifyInstance } from "fastify";
 import { fileRoutes } from "../../src";
 
-const main = async () => {
-  const app = fastify({ logger: true });
+const main = async (): Promise<void> => {
+  const app: FastifyInstance = fastify({ logger: true });
 
   await app.register(fileRoutes, {
     routesDir: "./routes",
@@ -12,5 +12,6 @@ const main = async () => {
   await app.listen(3000);
 };
 main().catch((error) => {
+  // eslint-disable-next-line no-console
   console.log(error);
 });

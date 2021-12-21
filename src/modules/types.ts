@@ -4,8 +4,8 @@ import type {
   ObjectJsonSchemaProperty,
 } from "type-jsonschema";
 
-export const errorLabel: "[ERROR] fastify-file-system-routes:" =
-  "[ERROR] fastify-file-system-routes:";
+export const errorLabel: "[ERROR] fastify-file-routes:" =
+  "[ERROR] fastify-file-routes:";
 
 export type ValidMethods =
   | "DELETE"
@@ -85,7 +85,7 @@ export type StrictRoute = {
   options?: StrictOptionsRoute;
 };
 
-export type FileSystemRoutesOptions = {
+export type FileRoutesOptions = {
   routesDir: string;
   prefix?: string;
 };

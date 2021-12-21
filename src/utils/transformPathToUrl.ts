@@ -28,5 +28,6 @@ export const transformPathToUrl = (filePath: string): string => {
   if (resultUrl.length === 0) {
     return "/";
   }
-  return resultUrl;
+
+  return resultUrl.replace("//", "/");
 };

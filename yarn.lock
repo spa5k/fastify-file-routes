@@ -4518,9 +4518,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-file-system-routes@workspace:.":
+"fastify-file-routes@workspace:.":
   version: 0.0.0-use.local
-  resolution: "fastify-file-system-routes@workspace:."
+  resolution: "fastify-file-routes@workspace:."
   dependencies:
     "@commitlint/cli": 15.0.0
     "@commitlint/config-conventional": 15.0.0
