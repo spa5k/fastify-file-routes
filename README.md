@@ -1,15 +1,8 @@
 # Fastify File Routes
 
-<div align="center">
-
-[![NPM version](https://img.shields.io/npm/v/fastify-file-routes.svg?style=for-the-badge)](https://www.npmjs.com/package/fastify-file-routes)
 [![NPM downloads](https://img.shields.io/npm/dm/fastify-file-routes.svg?style=for-the-badge)](https://www.npmjs.com/package/fastify-file-routes)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/fastify-file-routes?logo=files&style=for-the-badge)
-![npm](https://img.shields.io/npm/v/fastify-file-routes?logo=npm&style=for-the-badge)
+[![npm](https://img.shields.io/npm/v/fastify-file-routes?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/fastify-file-routes)
 ![node-current](https://img.shields.io/badge/Node-%3E=14-success?style=for-the-badge&logo=node)
-![npm](https://img.shields.io/npm/dw/fastify-file-routes?style=for-the-badge)
-
-</div>
 
 A Fastify plugin that provides a file system routes, based on the way Next.JS file system routing works, including all possible features.
 
