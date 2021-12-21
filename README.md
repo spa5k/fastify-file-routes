@@ -89,6 +89,63 @@ export const routes: Route = {
 };
 ```
 
+### 5. Wildcard (\*) routes.
+
+```typescript
+//file: `routes/profile/[...id].ts  `
+//mapped to: `<your host>/profile/*`
+
+export const routes: Route = {
+  get: {
+    handler: async (request, reply) => {
+      const { params } = request;
+      await reply.send(`wildcard route`);
+    },
+  },
+};
+```
+
+### 6. Post Request..
+
+```typescript
+export const routes: Route = {
+  post: {
+    handler: async (_request, reply) => {
+      await reply.send({
+        post: "post user",
+      });
+    },
+  },
+};
+```
+
+### 7. Prefix Route
+
+```typescript
+//file: `routes/some/route.ts`
+//url:  `http://your-host/api/some/route`
+
+await app.register(fileRoutes, {
+  routesDir: "./routes",
+  prefix: "/api",
+});
+
+export const routes: Route = {
+  post: {
+    handler: async (_request, reply) => {
+      await reply.send({
+        post: "post user",
+      });
+    },
+  },
+};
+```
+
+## Info
+
+1. Check the examples folder in /examples to see how to use the plugin.
+2. route.prefixTrailingSlash has been set to 'both'.
+
 ## :arrow_forward: Route module definition
 
 Method specification for attributes is available here: [Method specification](https://www.fastify.io/docs/latest/Routes/#full-declaration)
@@ -135,6 +192,6 @@ this is useful if you want to have a lib file which contains functions that don'
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Related
+## Related/Acknowledgements
 
-[Fastify - AutoRoutes](https://github.com/GiovanniCardamone/fastify-autoroutes)
+[Fastify - AutoRoutes](https://github.com/GiovanniCardamone/fastify-autoroutes) - Lots of code has been used from this project.
