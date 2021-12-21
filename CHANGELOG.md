@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/spa5k/fastify-file-routes/compare/v1.0.3...v1.1.0) (2021-12-21)
+
+
+### Bug Fixes
+
+* **actions:** 💚 removing tests from release CI ([6b7d850](https://github.com/spa5k/fastify-file-routes/commit/6b7d850cbd648fe21c84c494743c92121abbf593))
+* **parameters:** 🐛 fixing handleparameters ([b9d7b1d](https://github.com/spa5k/fastify-file-routes/commit/b9d7b1d245684edb7238d8355a4603bf919c4142))
+
+
+### Features
+
+* **parameters:** ✨ added multiple parameters support for files and folders ([8854728](https://github.com/spa5k/fastify-file-routes/commit/885472815ef480166e95efb978e7f9e1601e4ffe))
+
 ## [1.0.3](https://github.com/spa5k/fastify-file-routes/compare/v1.0.2...v1.0.3) (2021-12-21)
 
 ### Bug Fixes
