@@ -17,12 +17,9 @@ export const handleParameters = (token: string): string => {
   // This will handle the generic square bracket based routes - users/[id]/index.ts -> users/:id
   const url = wildCardRouteHandled.replaceAll(
     squareBracketRegex,
-    (subString, match) => {
-      return `:${String(match)}`;
-    }
+    (subString, match) => `:${String(match)}`
   );
-  // now replacing ]-[ with :
-  // This will handle the case when multiple parameters are present in one file like - users/[id]-[name].ts to users/:id-:name
-  const fixed = url.replaceAll("]-[", "-:");
-  return fixed.replaceAll("]/[", "/:");
+  // This will handle the case when multiple parameters are present in one file like -
+  //users / [id] - [name].ts to users /: id -:name and users / [id] - [name] / [age].ts to users /: id -: name /: age
+  return url.replaceAll("]-[", "-:").replaceAll("]/[", "/:");
 };
