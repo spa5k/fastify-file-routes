@@ -24,8 +24,6 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Test
-        run: pnpm ci:test
       - name: Build
         run: pnpm build
       - name: Release

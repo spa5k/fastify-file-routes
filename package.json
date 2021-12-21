@@ -94,11 +94,10 @@
     "format": "prettier --write .",
     "lint": "eslint src --ext .ts",
     "semantic-release": "semantic-release",
-    "pretest": "pnpm dev-ts",
     "start": "pnpm dev-ts",
     "test:suite": "vitest",
     "test": "vitest",
-    "ci:test": "start-server-and-test 'pnpm start' http://localhost:3000 'pnpm test'",
+    "ci:test": "start-server-and-test 'pnpm dev-ts' http://localhost:3000 'pnpm test'",
     "coverage": "c8 vitest"
   },
   "typings": "dist/index.d.ts"
