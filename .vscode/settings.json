@@ -5,6 +5,7 @@
     "actions",
     "test",
     "husky",
-    "docs"
+    "docs",
+    "autoload"
   ]
 }
