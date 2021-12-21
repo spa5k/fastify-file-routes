@@ -134,7 +134,7 @@ export const routes: Route = {
 };
 ```
 
-## Info
+## :information_source: Info
 
 1. Check the examples folder in /examples to see how to use the plugin.
 2. route.prefixTrailingSlash has been set to 'both'.
@@ -177,7 +177,12 @@ routes
 
 this is useful if you want to have a lib file which contains functions that don't have to be a route, so just create the file with `_` prepending character
 
-### Visualization of this Repo.
+## TODO
+
+1. Adding support for optional wildcard routes - [[...id]].
+2. More tests.
+
+## Visualization of this Repo.
 
 ![Visualization of this repo](./diagram.svg)
 
