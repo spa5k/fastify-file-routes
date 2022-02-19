@@ -1,7 +1,6 @@
 {
   "name": "fastify-file-routes",
   "description": "A Fastify plugin that provides a file system routes, based on the way Next.JS file system routing works, including all possible features.",
-  "version": "1.1.1",
   "author": "spa5k <unbuttun@gmail.com>",
   "bugs": {
     "url": "https://github.com/spa5k/fastify-file-routes/issues"
@@ -14,9 +13,6 @@
   "dependencies": {
     "fastify-plugin": "3.0.1",
     "picocolors": "1.0.0"
-  },
-  "peerDependencies": {
-    "fastify": ">=3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.1",
@@ -67,24 +63,27 @@
   "homepage": "https://github.com/spa5k/fastify-file-routes#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "pnpm format && pnpm lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "pnpm format && pnpm lint"
     }
   },
   "keywords": [
+    "cjs",
+    "esm",
     "fastify",
     "fastify-plugin",
-    "nextjs",
-    "next",
     "file-routes",
+    "next",
+    "nextjs",
     "routes",
-    "typescript",
-    "esm",
-    "cjs"
+    "typescript"
   ],
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
+  "peerDependencies": {
+    "fastify": ">=3.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spa5k/fastify-file-routes.git"
@@ -92,15 +91,17 @@
   "scripts": {
     "build": "tsup-node",
     "build:dev": "tsup-node",
+    "ci:test": "start-server-and-test 'pnpm dev-ts' http://localhost:3000 'pnpm test'",
+    "coverage": "c8 vitest",
     "dev-ts": "node-dev example/typescript/index.ts --notify=false",
     "format": "prettier --write .",
     "lint": "eslint src --ext .ts",
     "semantic-release": "semantic-release",
     "start": "pnpm dev-ts",
-    "test:suite": "vitest",
     "test": "vitest",
-    "ci:test": "start-server-and-test 'pnpm dev-ts' http://localhost:3000 'pnpm test'",
-    "coverage": "c8 vitest"
+    "test:suite": "vitest"
   },
-  "typings": "dist/index.d.ts"
+  "typings": "dist/index.d.ts",
+  "version": "1.1.1",
+  "packageManager": "pnpm@6.31.0"
 }
