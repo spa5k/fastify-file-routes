@@ -1,10 +1,10 @@
 export const handleParameters = (token: string): string => {
-  const squareBracketRegex = /\[(.*)\]/gu;
-  const tsRegex = /\.ts$/u;
-  const jsRegex = /\.js$/u;
-  const wildCardRouteRegex = /\[\.\.\..+\]/gu;
-  const multipleParamRegex = /\]-\[/gu;
-  const routeParamRegex = /\]\/\[/gu;
+  const squareBracketRegex: RegExp = /\[(.*)\]/gu;
+  const tsRegex: RegExp = /\.ts$/u;
+  const jsRegex: RegExp = /\.js$/u;
+  const wildCardRouteRegex: RegExp = /\[\.\.\..+\]/gu;
+  const multipleParamRegex: RegExp = /\]-\[/gu;
+  const routeParamRegex: RegExp = /\]\/\[/gu;
 
   // This will clean the url extensions like .ts or .js
   const tokenToBeReplaced: string = token
@@ -17,7 +17,7 @@ export const handleParameters = (token: string): string => {
   );
 
   // This will handle the generic square bracket based routes - users/[id]/index.ts -> users/:id
-  const url = wildCardRouteHandled.replace(
+  const url: string = wildCardRouteHandled.replace(
     squareBracketRegex,
     (subString, match) => `:${String(match)}`
   );
