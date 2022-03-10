@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { handleParameters } from "./../src/utils/handleParameters";
+import { handleParameters } from "../src/utils";
 
 describe("handleParameters", () => {
   it(`1 - [spark]`, () => {

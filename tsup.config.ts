@@ -1,10 +1,10 @@
 import type { Options } from "tsup";
 
-const env = process.env.NODE_ENV;
+const env: string | undefined = process.env.NODE_ENV;
 
 export const tsup: Options = {
-  splitting: true,
-  sourcemap: true,
+  splitting: false,
+  sourcemap: false,
   clean: true,
   dts: true,
   format: ["cjs", "esm"],
