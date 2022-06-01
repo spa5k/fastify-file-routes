@@ -16,7 +16,7 @@ specifiers:
   '@typescript-eslint/parser': 5.14.0
   c8: 7.11.3
   commitizen: 4.2.4
-  dotenv: 16.0.0
+  dotenv: 16.0.1
   esbuild: 0.14.25
   eslint: 8.10.0
   eslint-config-galex: 3.6.5
@@ -64,7 +64,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.14.0_eslint@8.10.0+typescript@4.6.2
   c8: 7.11.3
   commitizen: 4.2.4
-  dotenv: 16.0.0
+  dotenv: 16.0.1
   esbuild: 0.14.25
   eslint: 8.10.0
   eslint-config-galex: 3.6.5_eslint@8.10.0
@@ -2542,8 +2542,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /dotenv/16.0.0:
-    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
+  /dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
     engines: {node: '>=12'}
     dev: true
 
