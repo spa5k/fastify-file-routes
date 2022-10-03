@@ -1,16 +1,14 @@
 ## [1.1.2](https://github.com/spa5k/fastify-file-routes/compare/v1.1.1...v1.1.2) (2022-03-10)
 
-
 ### Bug Fixes
 
-* **parameters:** 🐛 use replace for comptability ([94df65b](https://github.com/spa5k/fastify-file-routes/commit/94df65b47fd4e12eedced71940f22fc5de3838d9))
+- **parameters:** 🐛 use replace for comptability ([94df65b](https://github.com/spa5k/fastify-file-routes/commit/94df65b47fd4e12eedced71940f22fc5de3838d9))
 
 ## [1.1.1](https://github.com/spa5k/fastify-file-routes/compare/v1.1.0...v1.1.1) (2021-12-21)
 
-
 ### Bug Fixes
 
-* **typescript:** 🔥 removing type json schema until a  better way to infer type is thought off ([c274cc0](https://github.com/spa5k/fastify-file-routes/commit/c274cc0f444af0f3b7912013a4d9446429f363a6))
+- **typescript:** 🔥 removing type json schema until a better way to infer type is thought off ([c274cc0](https://github.com/spa5k/fastify-file-routes/commit/c274cc0f444af0f3b7912013a4d9446429f363a6))
 
 # [1.1.0](https://github.com/spa5k/fastify-file-routes/compare/v1.0.3...v1.1.0) (2021-12-21)
 
