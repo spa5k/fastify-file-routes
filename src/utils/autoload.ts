@@ -2,7 +2,6 @@
 import type { FastifyInstance, RouteOptions } from "fastify";
 import pc from "picocolors";
 import { loadModule, ModuleType } from ".";
-import type { ValidMethods } from "../modules/types";
 import { validMethods } from "../modules/types";
 
 export async function autoload(
@@ -17,7 +16,6 @@ export async function autoload(
     for (const [method, route] of Object.entries<RouteOptions>(module)) {
       if (validMethods.has(method)) {
         route.url = prefix ? `/${prefix}${url}` : url;
-        route.method = method.toUpperCase() as ValidMethods;
         route.prefixTrailingSlash = "both";
 
         fastify.route(route);

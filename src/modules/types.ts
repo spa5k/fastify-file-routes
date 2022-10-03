@@ -1,18 +1,17 @@
 import type { RouteOptions } from "fastify";
 
-export const errorLabel: "[ERROR] fastify-file-routes:" =
-  "[ERROR] fastify-file-routes:";
+export const errorLabel = "[ERROR] fastify-file-routes:" as const;
 
 export type ValidMethods =
-  | "DELETE"
-  | "GET"
-  | "HEAD"
-  | "PATCH"
-  | "POST"
-  | "PUT"
-  | "OPTIONS";
+  | "delete"
+  | "get"
+  | "head"
+  | "patch"
+  | "post"
+  | "put"
+  | "options";
 
-export const validMethods: Set<string> = new Set([
+export const validMethods = new Set([
   "delete",
   "get",
   "head",
@@ -22,28 +21,40 @@ export const validMethods: Set<string> = new Set([
   "options",
 ]);
 
-export type AnyRoute = Omit<RouteOptions, "method" | "url">;
+export type RouteInterfaceRecord = Record<string, unknown> | unknown;
 
-export type DeleteRoute = AnyRoute;
-export type GetRoute = Omit<AnyRoute, "body">;
-export type HeadRoute = AnyRoute;
-export type PatchRoute = AnyRoute;
-export type PostRoute = AnyRoute;
-export type PutRoute = AnyRoute;
-export type OptionsRoute = AnyRoute;
+export type AnyRoute<
+  Body = unknown,
+  Headers extends RouteInterfaceRecord = unknown,
+  Params extends RouteInterfaceRecord = unknown,
+  Querystring extends RouteInterfaceRecord = unknown,
+  Reply = unknown
+> = Omit<
+  // Uses never to use the defaults from fastify
+  RouteOptions<
+    never,
+    never,
+    never,
+    {
+      Body: Body;
+      Headers: Headers;
+      Params: Params;
+      Querystring: Querystring;
+      Reply: Reply;
+    },
+    never
+  >,
+  "method" | "url"
+>;
 
-export type Security = {
-  [key: string]: string[];
-};
-
-export type Route = {
-  delete?: DeleteRoute;
-  get?: GetRoute;
-  head?: HeadRoute;
-  patch?: PatchRoute;
-  post?: PostRoute;
-  put?: PutRoute;
-  options?: OptionsRoute;
+export type Route<
+  Body = unknown,
+  Headers extends RouteInterfaceRecord = unknown,
+  Params extends RouteInterfaceRecord = unknown,
+  Querystring extends RouteInterfaceRecord = unknown,
+  Reply = unknown
+> = {
+  [Key in ValidMethods]?: AnyRoute<Body, Headers, Params, Querystring, Reply>;
 };
 
 export type FileRoutesOptions = {
