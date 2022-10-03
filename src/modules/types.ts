@@ -3,15 +3,15 @@ import type { RouteOptions } from "fastify";
 export const errorLabel = "[ERROR] fastify-file-routes:" as const;
 
 export type ValidMethods =
-  | "DELETE"
-  | "GET"
-  | "HEAD"
-  | "PATCH"
-  | "POST"
-  | "PUT"
-  | "OPTIONS";
+  | "delete"
+  | "get"
+  | "head"
+  | "patch"
+  | "post"
+  | "put"
+  | "options";
 
-export const validMethods: Set<string> = new Set([
+export const validMethods = new Set([
   "delete",
   "get",
   "head",
@@ -54,13 +54,7 @@ export type Route<
   Querystring extends RouteInterfaceRecord = unknown,
   Reply = unknown
 > = {
-  delete?: AnyRoute<Body, Headers, Params, Querystring, Reply>;
-  get?: Omit<AnyRoute<Body, Headers, Params, Querystring, Reply>, "body">;
-  head?: AnyRoute<Body, Headers, Params, Querystring, Reply>;
-  patch?: AnyRoute<Body, Headers, Params, Querystring, Reply>;
-  post?: AnyRoute<Body, Headers, Params, Querystring, Reply>;
-  put?: AnyRoute<Body, Headers, Params, Querystring, Reply>;
-  options?: AnyRoute<Body, Headers, Params, Querystring, Reply>;
+  [Key in ValidMethods]?: AnyRoute<Body, Headers, Params, Querystring, Reply>;
 };
 
 export type FileRoutesOptions = {
