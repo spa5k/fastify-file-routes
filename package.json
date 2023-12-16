@@ -24,7 +24,7 @@
     "@semantic-release/npm": "9.0.1",
     "@semantic-release/release-notes-generator": "10.0.3",
     "@spa5k/eslint-config": "0.0.2",
-    "@types/jest": "27.4.1",
+    "@types/jest": "27.5.2",
     "@types/node": "17.0.21",
     "@typescript-eslint/eslint-plugin": "5.14.0",
     "@typescript-eslint/parser": "5.14.0",
